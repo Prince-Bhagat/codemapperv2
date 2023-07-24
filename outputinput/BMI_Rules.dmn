@@ -1,0 +1,223 @@
+<definitions xmlns="https://www.omg.org/spec/DMN/20191111/MODEL/" xmlns:dmndi="https://www.omg.org/spec/DMN/20191111/DMNDI/" xmlns:dc="http://www.omg.org/spec/DMN/20180521/DC/" xmlns:biodi="http://bpmn.io/schema/dmn/biodi/2.0" xmlns:modeler="http://camunda.org/schema/modeler/1.0" id="Definitions_04i33s6" name="DRD" namespace="http://camunda.org/schema/1.0/dmn" exporter="Camunda Modeler" exporterVersion="5.10.0" modeler:executionPlatform="Camunda Platform" modeler:executionPlatformVersion="7.18.0">
+  <decision id="BMI_Rules" name="BMI_Rules">
+    <decisionTable id="DecisionTable_08bnvf7" hitPolicy="FIRST">
+      <input id="Input_1" label="age" biodi:width="192">
+        <inputExpression id="InputExpression_1" typeRef="number">
+          <text>age</text>
+        </inputExpression>
+      </input>
+      <input id="InputClause_1flvysx" label="bmi">
+        <inputExpression id="LiteralExpression_0ie8750" typeRef="number">
+          <text>bmi</text>
+        </inputExpression>
+      </input>
+      <output id="ACCWDmp9mXGESiZg9w4qXQoRbbtIw4DQg" name="uwDecision" typeRef="string"/>
+      <output id="AbqBcBzryF3u8w1KXQoy6OyHUo8EkRbmX" name="uwDecisionCode" typeRef="string"/>
+      <output id="ASYltSBPAm5xHYi0ZZOmGX3fqfDlIoXOJ" name="uwDecisionStatus" typeRef="string"/>
+      <output id="A2aSjShn75yyg0fJo0hXpTmM5Gg2XxNzc" name="uwDecisionAggregateCode" typeRef="string"/>
+      <output id="Output_1" label="uwDecision  " name="underwritingDecision" typeRef="string" biodi:width="192"/>
+      <output id="OutputClause_12zblqj" name="decisionType  " typeRef="string"/>
+      <output id="OutputClause_02qcte3" name="decisionCriteria  " typeRef="string"/>
+      <output id="OutputClause_1objsra" label="loading" name="loading" typeRef="number"/>
+      <output id="OutputClause_0nhym0v" label="icd10Code" name="icd10Code" typeRef="string"/>
+      <output id="OutputClause_1kh2w50" name="communicationText" typeRef="string"/>
+      <rule id="DecisionRule_0l8537e">
+        <inputEntry id="UnaryTests_1k9bg6d">
+          <text>[18..65]</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0vdvsu6">
+          <text>&lt; 17 </text>
+        </inputEntry>
+        <outputEntry id="AlWyuoHr6rQVJWAWyZRMY7Jx18oPMjXlP">
+          <text>"Reject"</text>
+        </outputEntry>
+        <outputEntry id="AXWfHsiBGWvFmRZnfpeRUDEkR6Yu6Aglv">
+          <text>"SYMUWDC04"</text>
+        </outputEntry>
+        <outputEntry id="AXU64pY1dYlKhdJ9mCj9lU0U6tjp2Cie1">
+          <text>"Reject"</text>
+        </outputEntry>
+        <outputEntry id="AhcptAH40kndEbOyRYMZAutRLH84CUTg5">
+          <text>"SYMUWDC0402000102"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_0f2cb2s">
+          <text>"Reject"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_1dznkc6">
+          <text>"STP"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_0qtexd8">
+          <text>"Upfront Rejection"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_1rsvb7p">
+          <text/>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_1vejgtx">
+          <text>"E63.4"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_0i33u4b">
+          <text>"We could not extend the coverage due to extreme underweight"</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_0e5ckyq">
+        <inputEntry id="UnaryTests_064eapq">
+          <text>[18..65]</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0n3q3qv">
+          <text>(25..30]</text>
+        </inputEntry>
+        <outputEntry id="AddAlLJKyysAWqUjSYWtns6Og2BdExBKv">
+          <text>"Accept"</text>
+        </outputEntry>
+        <outputEntry id="AVgyXmZvf7Rl98nkRmN0XsypEEiEStHxG">
+          <text>"SYMUWDC01"</text>
+        </outputEntry>
+        <outputEntry id="AobzJ60cF8zlEN8ed7AWwHylQpXPyx29d">
+          <text>"Accept"</text>
+        </outputEntry>
+        <outputEntry id="ALEVzkv56sgjvgUKe9x3aMryhDL0OJBHu">
+          <text>"SYMUWDC0101000102"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_0d5weqc">
+          <text>"Accept"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_16p80h6">
+          <text>"NSTP"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_1q29ruh">
+          <text>"Underwriting Rules Before PPHC"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_0snj9iz">
+          <text>5</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_00zbldh">
+          <text>"E66"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_0t95rxi">
+          <text>"Raised Body Mass index"</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_0j1zyfp">
+        <inputEntry id="UnaryTests_1ilizrb">
+          <text>[18..65]</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0fsf5v6">
+          <text>(30..35]</text>
+        </inputEntry>
+        <outputEntry id="AeZaeqiOBL2LFEQRwqS8qQl5jVBkicUmh">
+          <text>"Accept"</text>
+        </outputEntry>
+        <outputEntry id="Ai8YzVKFz92zyeQ8IKcXRxCk1iO1fqXRn">
+          <text>"SYMUWDC01"</text>
+        </outputEntry>
+        <outputEntry id="Atjr3FOsTxWXSLaZTGlCCxAcf4A1CV93R">
+          <text>"Accept"</text>
+        </outputEntry>
+        <outputEntry id="APIzaeG1h5wbdjpyF0QuycZfA7Ww2P3e0">
+          <text>"SYMUWDC0101000102"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_1tfr97y">
+          <text>"Accept"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_1vkzplm">
+          <text>"NSTP"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_0kmuwr9">
+          <text>'Underwriting Rules Before PPHC"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_1dc0e8u">
+          <text>10</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_0e7o7s1">
+          <text>"E66"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_0ozznpd">
+          <text>"Raised Body Mass index"</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_1sm8ob6">
+        <inputEntry id="UnaryTests_0rlxnct">
+          <text>[18..65]</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0yd2jaq">
+          <text>&gt; 35</text>
+        </inputEntry>
+        <outputEntry id="A8s1rNP1IP9JRqHcEaG7IzKNkz3hAiKco">
+          <text>"Reject"</text>
+        </outputEntry>
+        <outputEntry id="Azv1CqBDS3VNwQJqZHFZL3CvNSrSGJSSG">
+          <text>"SYMUWDC04"</text>
+        </outputEntry>
+        <outputEntry id="A7ogFyK1ZaMgQEN73ZtbYV2wSsGmtIJer">
+          <text>"Reject"</text>
+        </outputEntry>
+        <outputEntry id="ANGPMdoEbFxB7jMRMH9T8hYOFlj1BErp6">
+          <text>"SYMUWDC0402000102"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_1bkbl4j">
+          <text>"Reject"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_1cjaxrs">
+          <text>"STP"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_1vgfpl9">
+          <text>"Upfront Rejection"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_1bi2i23">
+          <text/>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_00zd1lo">
+          <text>"E66.2"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_0e43v78">
+          <text>"We could not extend the coverage due to Extreme obesity"</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_12ev6z4">
+        <inputEntry id="UnaryTests_1xynxn3">
+          <text/>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0c3owtt">
+          <text/>
+        </inputEntry>
+        <outputEntry id="AFscFdDW30sD6wzSs6Ma5VFxQ2NE8Fv3X">
+          <text>"Reject"</text>
+        </outputEntry>
+        <outputEntry id="AxVj0qssPdBAKyAROevkESUewHaBBJmuS">
+          <text>"SYMUWDC04"</text>
+        </outputEntry>
+        <outputEntry id="AvM4mLKdV6Wphooxn2JOagM1YVvDEEVsW">
+          <text>"Reject"</text>
+        </outputEntry>
+        <outputEntry id="Aam8mwU6jUJyLg5tinJBExpuRIDQE9vuT">
+          <text>"SYMUWDC0402000102"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_0a5502e">
+          <text>"Reject"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_0ddt1z4">
+          <text/>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_0od0844">
+          <text/>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_1hnpy19">
+          <text/>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_1y2mhfl">
+          <text/>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_18z8gqc">
+          <text/>
+        </outputEntry>
+      </rule>
+    </decisionTable>
+  </decision>
+  <dmndi:DMNDI>
+    <dmndi:DMNDiagram>
+      <dmndi:DMNShape dmnElementRef="BMI_Rules">
+        <dc:Bounds height="80" width="180" x="160" y="100"/>
+      </dmndi:DMNShape>
+    </dmndi:DMNDiagram>
+  </dmndi:DMNDI>
+</definitions>

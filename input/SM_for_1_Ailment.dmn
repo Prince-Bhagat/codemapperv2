@@ -1,0 +1,350 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<definitions xmlns="https://www.omg.org/spec/DMN/20191111/MODEL/" xmlns:dmndi="https://www.omg.org/spec/DMN/20191111/DMNDI/" xmlns:dc="http://www.omg.org/spec/DMN/20180521/DC/" xmlns:modeler="http://camunda.org/schema/modeler/1.0" id="Definitions_0wcuyka" name="DRD" namespace="http://camunda.org/schema/1.0/dmn" exporter="Camunda Modeler" exporterVersion="5.5.1" modeler:executionPlatform="Camunda Platform" modeler:executionPlatformVersion="7.18.0">
+  <decision id="SM_for_1_Ailment" name="SM_for_1_Ailment">
+    <decisionTable id="DecisionTable_11st4hy" hitPolicy="FIRST">
+      <input id="Input_1" label="Ailment">
+        <inputExpression id="InputExpression_1" typeRef="string">
+          <text>ailment</text>
+        </inputExpression>
+      </input>
+      <input id="InputClause_1rrn1hy" label="Ailment Code">
+        <inputExpression id="LiteralExpression_1i2p9fu" typeRef="string">
+          <text>ailmentCode</text>
+        </inputExpression>
+      </input>
+      <input id="InputClause_19d6mr3" label="Current Status">
+        <inputExpression id="LiteralExpression_0bgtftj" typeRef="string">
+          <text>currentStatus</text>
+        </inputExpression>
+      </input>
+      <input id="InputClause_1n5io31" label="Duration">
+        <inputExpression id="LiteralExpression_17kah4i" typeRef="string">
+          <text>duration</text>
+        </inputExpression>
+      </input>
+      <output id="Output_1" label="underwritingDecision" name="underwritingDecision" typeRef="string" />
+      <output id="OutputClause_176ph1w" label="Loading" name="loading" typeRef="string" />
+      <output id="OutputClause_016ktn9" label="ICD10Code" name="icd10Code" typeRef="string" />
+      <output id="OutputClause_16jmhxt" label="Communication_Text" name="communication_Text" typeRef="string" />
+      <rule id="DecisionRule_1hcmdnu">
+        <inputEntry id="UnaryTests_10q3ne5">
+          <text>"Hypertension"</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1r66hlv">
+          <text>"I10"</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0lfa2if">
+          <text>"Cured"</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1kl04uu">
+          <text>0..4</text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_13qgkj0">
+          <text>"Manual UW Decision"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_1x7kwl4">
+          <text>0</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_186pb0h">
+          <text>"NA"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_1nc8tbv">
+          <text>"Hypertension"</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_1rda9oi">
+        <inputEntry id="UnaryTests_0rm7sj1">
+          <text>"Hypertension"</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_17zpizr">
+          <text>"I10"</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1difnce">
+          <text>"Cured"</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0ut99ve">
+          <text>5..10</text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_1v9rmer">
+          <text>"Manual UW Decision"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_1r1t7f8">
+          <text>0</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_1qtmn35">
+          <text>"NA"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_189kcaj">
+          <text>"NA"</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_193s88n">
+        <inputEntry id="UnaryTests_1i59dbf">
+          <text>"Hypertension"</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0w79lqv">
+          <text>"I10"</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0zuwnkc">
+          <text>"Cured"</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1m8vx1p">
+          <text>&gt; 10</text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_0sd2p3m">
+          <text>"Manual UW Decision"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_1vp5t9b">
+          <text>0</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_0i38roy">
+          <text>"NA"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_1ikck69">
+          <text>"NA"</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_0iai87n">
+        <inputEntry id="UnaryTests_0bl9d75">
+          <text>"Hypertension"</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_07w2y1e">
+          <text>"I10"</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1kfghq8">
+          <text>"Ongoing"</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1h7m5kr">
+          <text>0..4</text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_1veh0ui">
+          <text>"Reject"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_186gfse">
+          <text>10</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_1ma163n">
+          <text>"I10"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_04k84qz">
+          <text>"Hypertension"</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_1yzw4cj">
+        <inputEntry id="UnaryTests_1hqilc9">
+          <text>"Hypertension"</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1elmyzf">
+          <text>"I10"</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_04v1k7m">
+          <text>"Ongoing"</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0yz4plc">
+          <text>5..10</text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_084gapr">
+          <text>"Reject"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_0e8les4">
+          <text>15</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_1l5pqz0">
+          <text>"I10"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_0ys2adp">
+          <text>"Hypertension"</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_1idrh5o">
+        <inputEntry id="UnaryTests_170r6or">
+          <text>"Hypertension"</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0bw80o5">
+          <text>"I10"</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_10bih7x">
+          <text>"Ongoing"</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0e6xmy1">
+          <text>&gt; 10</text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_1mp6rht">
+          <text>"Reject"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_02f4sis">
+          <text>20</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_0a1ezx9">
+          <text>"I10"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_1xfg3zr">
+          <text>"Hypertension"</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_1pm7jwx">
+        <inputEntry id="UnaryTests_1yvz57f">
+          <text>"Type-2 Diabetes Mellitus"</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1r3nlzw">
+          <text>"E11"</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1mb51wp">
+          <text>"Cured"</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0rvu69z">
+          <text>0..4</text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_0ik4nqh">
+          <text>"Manual UW Decision"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_04q6gl2">
+          <text>0</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_1bska41">
+          <text>"NA"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_1azujjn">
+          <text>"Type-2 Diabetes Mellitus"</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_1w6y36b">
+        <inputEntry id="UnaryTests_0ft4qx4">
+          <text>"Type-2 Diabetes Mellitus"</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0sh9xe9">
+          <text>"E11"</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0l6snqg">
+          <text>"Cured"</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0qm4faw">
+          <text>5..10</text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_10scsq7">
+          <text>"Manual UW Decision"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_0s67cyn">
+          <text>0</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_0bnw3v7">
+          <text>"NA"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_030a7zv">
+          <text>"NA"</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_1khoj5j">
+        <inputEntry id="UnaryTests_0epuxlo">
+          <text>"Type-2 Diabetes Mellitus"</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1ww042u">
+          <text>"E11"</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0w8m3d0">
+          <text>"Cured"</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1u84kfa">
+          <text>&gt; 10</text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_1vab7n1">
+          <text>"Manual UW Decision"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_0fphzsg">
+          <text>0</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_0p8zyk7">
+          <text>"NA"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_1igzaie">
+          <text>"NA"</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_0afptyf">
+        <inputEntry id="UnaryTests_0f17lii">
+          <text>"Type-2 Diabetes Mellitus"</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1u1ekep">
+          <text>"E11"</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_11qki0g">
+          <text>"Ongoing"</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1d8bonh">
+          <text>0..4</text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_0ofwiw7">
+          <text>"Reject"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_1iqpshe">
+          <text>10</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_0tmq4px">
+          <text>"E11"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_1tr2s9d">
+          <text>"Type-2 Diabetes Mellitus"</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_0d7c3k7">
+        <inputEntry id="UnaryTests_1h6am0z">
+          <text>"Type-2 Diabetes Mellitus"</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0egf12b">
+          <text>"E11"</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0uewm0o">
+          <text>"Ongoing"</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1xufpqa">
+          <text>5..10</text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_1bjhhs7">
+          <text>"Reject"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_0t5swh3">
+          <text>15</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_0r9izfm">
+          <text>"E11"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_0pi29nz">
+          <text>"Type-2 Diabetes Mellitus"</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_10bq87w">
+        <inputEntry id="UnaryTests_10ni9o9">
+          <text>"Type-2 Diabetes Mellitus"</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_056pu3s">
+          <text>"E11"</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0mwkh3y">
+          <text>"Ongoing"</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0dg075n">
+          <text>&gt; 10</text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_1ymbsx1">
+          <text>"Reject"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_1idn2sy">
+          <text>20</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_1fskk1l">
+          <text>"E11"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_17utzun">
+          <text>"Type-2 Diabetes Mellitus"</text>
+        </outputEntry>
+      </rule>
+    </decisionTable>
+  </decision>
+  <dmndi:DMNDI>
+    <dmndi:DMNDiagram>
+      <dmndi:DMNShape dmnElementRef="SM_for_1_Ailment">
+        <dc:Bounds height="80" width="180" x="160" y="100" />
+      </dmndi:DMNShape>
+    </dmndi:DMNDiagram>
+  </dmndi:DMNDI>
+</definitions>

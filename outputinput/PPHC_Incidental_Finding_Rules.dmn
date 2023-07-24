@@ -1,0 +1,784 @@
+<definitions xmlns="https://www.omg.org/spec/DMN/20191111/MODEL/" id="someId" name="someName" namespace="http://camunda.org/schema/1.0/dmn" exporter="Camunda Modeler" exporterVersion="5.10.0">
+  <decision id="PPHC_Incidental_Finding_Rules" name="PPHC Incidental Finding Rules">
+    <decisionTable id="decisionTable" hitPolicy="FIRST">
+      <input id="Input_1" label="Test Name">
+        <inputExpression id="InputExpression_2" typeRef="string"/>
+      </input>
+      <input id="Input_3" label="LOINC CODE">
+        <inputExpression id="InputExpression_4" typeRef="string"/>
+      </input>
+      <input id="Input_5" label="Reference Range">
+        <inputExpression id="InputExpression_6" typeRef="integer"/>
+      </input>
+      <output id="AKNcTPUHKRrfrPJAE7qi1v7czNHEv0qly" name="uwDecision" typeRef="string"/>
+      <output id="ABpZ9gcdy2zs0RaFifCVeabxio6TYu2pe" name="uwDecisionCode" typeRef="string"/>
+      <output id="Av3HlysDQTfSFkV2OzxKccngiuH1jjegE" name="uwDecisionStatus" typeRef="string"/>
+      <output id="AOJtzF1zdFOucBqVq4gua7p41SIZYyVKx" name="uwDecisionAggregateCode" typeRef="string"/>
+      <output id="Output_7" label="UW Decision" name="underwritingDecision" typeRef="string"/>
+      <output id="Output_8" label="Loading %" name="Loading %" typeRef="integer"/>
+      <output id="Output_9" label="Ailment Name" name="Ailment Name" typeRef="string"/>
+      <output id="Output_10" label="Ailment ICD10" name="Ailment ICD10" typeRef="string"/>
+      <output id="Output_11" label="Communication Text" name="Communication Text" typeRef="string"/>
+      <rule id="Rule_12">
+        <inputEntry id="Input_13">
+          <text>"Systolic BP"</text>
+        </inputEntry>
+        <inputEntry id="Input_14">
+          <text>"76534-7"</text>
+        </inputEntry>
+        <inputEntry id="Input_15">
+          <text>100..140</text>
+        </inputEntry>
+        <outputEntry id="A7Z7AONLbXz0w9aokIUetSXI09wBWHcjL">
+          <text>"Accept"</text>
+        </outputEntry>
+        <outputEntry id="APstJntXRaAiUnNb7eusRRTvaAR9jroWl">
+          <text>"SYMUWDC01"</text>
+        </outputEntry>
+        <outputEntry id="A2mlnaD5O2cl9tIxP0z7RTYtzR1sKOOfS">
+          <text>"Accept"</text>
+        </outputEntry>
+        <outputEntry id="AV2IrzogC7XTQIQfcoAVQjONscsLTTOvj">
+          <text>"SYMUWDC0101000102"</text>
+        </outputEntry>
+        <outputEntry id="Output_16">
+          <text>"Accept "</text>
+        </outputEntry>
+        <outputEntry id="Output_17">
+          <text/>
+        </outputEntry>
+        <outputEntry id="Output_18">
+          <text/>
+        </outputEntry>
+        <outputEntry id="Output_19">
+          <text/>
+        </outputEntry>
+        <outputEntry id="Output_20">
+          <text/>
+        </outputEntry>
+      </rule>
+      <rule id="Rule_21">
+        <inputEntry id="Input_22">
+          <text>"Systolic BP"</text>
+        </inputEntry>
+        <inputEntry id="Input_23">
+          <text>"76534-7"</text>
+        </inputEntry>
+        <inputEntry id="Input_24">
+          <text>141..150</text>
+        </inputEntry>
+        <outputEntry id="AwxAiJxyRl3RcyHSlSPnK1Z3sXCfE1P9o">
+          <text>"Accept"</text>
+        </outputEntry>
+        <outputEntry id="ADRtO0YL7bjSULpQo6Jy3wlQUUCy20bRu">
+          <text>"SYMUWDC01"</text>
+        </outputEntry>
+        <outputEntry id="A8SppIGbzO6gPrSMurtKDhWz89hpAu2GO">
+          <text>"Accept with loading"</text>
+        </outputEntry>
+        <outputEntry id="Auy8geoZ7GDQGnAyGkVhmH4bVklGwZu76">
+          <text>"SYMUWDC0102000302"</text>
+        </outputEntry>
+        <outputEntry id="Output_25">
+          <text>"Accept with loading"</text>
+        </outputEntry>
+        <outputEntry id="Output_26">
+          <text>10</text>
+        </outputEntry>
+        <outputEntry id="Output_27">
+          <text>"Hypertension"</text>
+        </outputEntry>
+        <outputEntry id="Output_28">
+          <text>"I10"</text>
+        </outputEntry>
+        <outputEntry id="Output_29">
+          <text>"Raised Blood pressure"</text>
+        </outputEntry>
+      </rule>
+      <rule id="Rule_30">
+        <inputEntry id="Input_31">
+          <text>"Systolic BP"</text>
+        </inputEntry>
+        <inputEntry id="Input_32">
+          <text>"76534-7"</text>
+        </inputEntry>
+        <inputEntry id="Input_33">
+          <text>151..160</text>
+        </inputEntry>
+        <outputEntry id="AbM8NWygc0RucK42qxsZYILNkaUKYdG6c">
+          <text>"Accept"</text>
+        </outputEntry>
+        <outputEntry id="A3IcLovbC6EF8ky0rq7f2xwP7BQ1CaSSr">
+          <text>"SYMUWDC01"</text>
+        </outputEntry>
+        <outputEntry id="ADaewedKQosfeFvxZu929zAzVrml0cJHb">
+          <text>"Accept with loading"</text>
+        </outputEntry>
+        <outputEntry id="A1sBDE8RdePh7ksiEARXwmSSc4AQ4lJS3">
+          <text>"SYMUWDC0102000302"</text>
+        </outputEntry>
+        <outputEntry id="Output_34">
+          <text>"Accept with loading"</text>
+        </outputEntry>
+        <outputEntry id="Output_35">
+          <text>20</text>
+        </outputEntry>
+        <outputEntry id="Output_36">
+          <text>"Hypertension"</text>
+        </outputEntry>
+        <outputEntry id="Output_37">
+          <text>"I10"</text>
+        </outputEntry>
+        <outputEntry id="Output_38">
+          <text>"Raised Blood pressure"</text>
+        </outputEntry>
+      </rule>
+      <rule id="Rule_39">
+        <inputEntry id="Input_40">
+          <text>"Systolic BP"</text>
+        </inputEntry>
+        <inputEntry id="Input_41">
+          <text>"76534-7"</text>
+        </inputEntry>
+        <inputEntry id="Input_42">
+          <text>&gt;160</text>
+        </inputEntry>
+        <outputEntry id="AR3JDRXxsBEJ1gpCTOP5W01kd1xQpAoWl">
+          <text>"Reject"</text>
+        </outputEntry>
+        <outputEntry id="AND2iPfXGMPtZmI8aUaGV2vf5OTVeWMRf">
+          <text>"SYMUWDC04"</text>
+        </outputEntry>
+        <outputEntry id="ACBvHHT4IpzFapzxlvvWa8J6k3Aj6gbsL">
+          <text>"Reject"</text>
+        </outputEntry>
+        <outputEntry id="AOV4UgOOFqErhNPr3bryDvAFdNWcWfivi">
+          <text>"SYMUWDC0402000102"</text>
+        </outputEntry>
+        <outputEntry id="Output_43">
+          <text>"Reject"</text>
+        </outputEntry>
+        <outputEntry id="Output_44">
+          <text/>
+        </outputEntry>
+        <outputEntry id="Output_45">
+          <text/>
+        </outputEntry>
+        <outputEntry id="Output_46">
+          <text/>
+        </outputEntry>
+        <outputEntry id="Output_47">
+          <text>"Uncontrolled Blood Pressure"</text>
+        </outputEntry>
+      </rule>
+      <rule id="Rule_48">
+        <inputEntry id="Input_49">
+          <text>"Systolic BP"</text>
+        </inputEntry>
+        <inputEntry id="Input_50">
+          <text>"76534-7"</text>
+        </inputEntry>
+        <inputEntry id="Input_51">
+          <text>&lt;100</text>
+        </inputEntry>
+        <outputEntry id="ANZJTdPmGKwgxRWut9hqTlYxQQR9ImW9x">
+          <text>"Reject"</text>
+        </outputEntry>
+        <outputEntry id="APlMG4qqIufq9MJpW2IsYQkB7XJp75kvv">
+          <text>"SYMUWDC04"</text>
+        </outputEntry>
+        <outputEntry id="A41sv7IFy5kQvoy8QLeaYS6JrGAiZWwIT">
+          <text>"Reject"</text>
+        </outputEntry>
+        <outputEntry id="Av6pjEYezokjpmnELshmqzTqinTyaJFL1">
+          <text>"SYMUWDC0402000102"</text>
+        </outputEntry>
+        <outputEntry id="Output_52">
+          <text>"Reject"</text>
+        </outputEntry>
+        <outputEntry id="Output_53">
+          <text/>
+        </outputEntry>
+        <outputEntry id="Output_54">
+          <text/>
+        </outputEntry>
+        <outputEntry id="Output_55">
+          <text/>
+        </outputEntry>
+        <outputEntry id="Output_56">
+          <text>"Low Blood Pressure"</text>
+        </outputEntry>
+      </rule>
+      <rule id="Rule_57">
+        <inputEntry id="Input_58">
+          <text>"Diastolic BP"</text>
+        </inputEntry>
+        <inputEntry id="Input_59">
+          <text>"76535-4"</text>
+        </inputEntry>
+        <inputEntry id="Input_60">
+          <text>60..90</text>
+        </inputEntry>
+        <outputEntry id="AZVF3F3T0eqOPwR93KSTH4i49wJNuRrng">
+          <text>"Accept"</text>
+        </outputEntry>
+        <outputEntry id="AAIGHOAyloI4B001BPCi8cTSpTt6MHycH">
+          <text>"SYMUWDC01"</text>
+        </outputEntry>
+        <outputEntry id="AtrK2lIp7hiXr5AvozDfdYddq9REsHet3">
+          <text>"Accept"</text>
+        </outputEntry>
+        <outputEntry id="A7kr8lVUPSvYzw1a8KwywgaKFeV9WPb85">
+          <text>"SYMUWDC0101000102"</text>
+        </outputEntry>
+        <outputEntry id="Output_61">
+          <text>"Accept "</text>
+        </outputEntry>
+        <outputEntry id="Output_62">
+          <text/>
+        </outputEntry>
+        <outputEntry id="Output_63">
+          <text/>
+        </outputEntry>
+        <outputEntry id="Output_64">
+          <text/>
+        </outputEntry>
+        <outputEntry id="Output_65">
+          <text/>
+        </outputEntry>
+      </rule>
+      <rule id="Rule_66">
+        <inputEntry id="Input_67">
+          <text>"Diastolic BP"</text>
+        </inputEntry>
+        <inputEntry id="Input_68">
+          <text>"76535-4"</text>
+        </inputEntry>
+        <inputEntry id="Input_69">
+          <text>91..100</text>
+        </inputEntry>
+        <outputEntry id="AfAC48tHZfB92YK53gFQFDin8uCiiuhHe">
+          <text>"Accept"</text>
+        </outputEntry>
+        <outputEntry id="AsxXG7sXqVEl8CKj07SQiAoWFj4wSwn4i">
+          <text>"SYMUWDC01"</text>
+        </outputEntry>
+        <outputEntry id="AwYRnn67qQwYjEebqjyOp1FDjg78VVpzx">
+          <text>"Accept with loading"</text>
+        </outputEntry>
+        <outputEntry id="AMTFQ9bfuWPp3XN0Rtl3ERn7xVE6IIt11">
+          <text>"SYMUWDC0102000302"</text>
+        </outputEntry>
+        <outputEntry id="Output_70">
+          <text>"Accept with loading"</text>
+        </outputEntry>
+        <outputEntry id="Output_71">
+          <text>10</text>
+        </outputEntry>
+        <outputEntry id="Output_72">
+          <text>"Hypertension"</text>
+        </outputEntry>
+        <outputEntry id="Output_73">
+          <text>"I10"</text>
+        </outputEntry>
+        <outputEntry id="Output_74">
+          <text>"Raised Blood Pressure"</text>
+        </outputEntry>
+      </rule>
+      <rule id="Rule_75">
+        <inputEntry id="Input_76">
+          <text>"Diastolic BP"</text>
+        </inputEntry>
+        <inputEntry id="Input_77">
+          <text>"76535-4"</text>
+        </inputEntry>
+        <inputEntry id="Input_78">
+          <text>101..110</text>
+        </inputEntry>
+        <outputEntry id="A4k5ocXe06HHYSCFi5Emt1hui734vH7kV">
+          <text>"Accept"</text>
+        </outputEntry>
+        <outputEntry id="Akf2I5Qi7VyksbPmiq4XforxeJOPVKIUn">
+          <text>"SYMUWDC01"</text>
+        </outputEntry>
+        <outputEntry id="AAIqo7LEsIqXzmCkPKTEsPR8KiXaKtVpN">
+          <text>"Accept with loading"</text>
+        </outputEntry>
+        <outputEntry id="Av4nmTpOJSA7ZNfhVIPzOaG4N3c2ak8qa">
+          <text>"SYMUWDC0102000302"</text>
+        </outputEntry>
+        <outputEntry id="Output_79">
+          <text>"Accept with loading"</text>
+        </outputEntry>
+        <outputEntry id="Output_80">
+          <text>20</text>
+        </outputEntry>
+        <outputEntry id="Output_81">
+          <text>"Hypertension"</text>
+        </outputEntry>
+        <outputEntry id="Output_82">
+          <text>"I10"</text>
+        </outputEntry>
+        <outputEntry id="Output_83">
+          <text>"Raised Blood Pressure"</text>
+        </outputEntry>
+      </rule>
+      <rule id="Rule_84">
+        <inputEntry id="Input_85">
+          <text>"Diastolic BP"</text>
+        </inputEntry>
+        <inputEntry id="Input_86">
+          <text>"76535-4"</text>
+        </inputEntry>
+        <inputEntry id="Input_87">
+          <text>&gt;110</text>
+        </inputEntry>
+        <outputEntry id="APYPWwsNpM6P5fTFtQFSAnlHZH0QRk42g">
+          <text>"Reject"</text>
+        </outputEntry>
+        <outputEntry id="AoXVAOn2dl68O08OYy12yvHcJhIClrIe2">
+          <text>"SYMUWDC04"</text>
+        </outputEntry>
+        <outputEntry id="AYmv3kMRDSB2d6YSevBmiHk246ARss13Z">
+          <text>"Reject"</text>
+        </outputEntry>
+        <outputEntry id="AxAVjU53W97fbldxwjRO9ysR6NlfOK1kt">
+          <text>"SYMUWDC0402000102"</text>
+        </outputEntry>
+        <outputEntry id="Output_88">
+          <text>"Reject"</text>
+        </outputEntry>
+        <outputEntry id="Output_89">
+          <text/>
+        </outputEntry>
+        <outputEntry id="Output_90">
+          <text/>
+        </outputEntry>
+        <outputEntry id="Output_91">
+          <text/>
+        </outputEntry>
+        <outputEntry id="Output_92">
+          <text>"Uncontrolled Blood Pressure"</text>
+        </outputEntry>
+      </rule>
+      <rule id="Rule_93">
+        <inputEntry id="Input_94">
+          <text>"Diastolic BP"</text>
+        </inputEntry>
+        <inputEntry id="Input_95">
+          <text>"76535-4"</text>
+        </inputEntry>
+        <inputEntry id="Input_96">
+          <text>59</text>
+        </inputEntry>
+        <outputEntry id="AMf3lLjA2FmJh932dYJtAvbwGWSs1y2jX">
+          <text>"Reject"</text>
+        </outputEntry>
+        <outputEntry id="AYzjeyiHzCHqgJe0xy8wLLt4cOnlC987c">
+          <text>"SYMUWDC04"</text>
+        </outputEntry>
+        <outputEntry id="Azl22x0TqVsbyqVbajywfeLVcIIeH2KAz">
+          <text>"Reject"</text>
+        </outputEntry>
+        <outputEntry id="Avn4kgTKBKpsOp2BSJrnqbfTyp9pLDUxB">
+          <text>"SYMUWDC0402000102"</text>
+        </outputEntry>
+        <outputEntry id="Output_97">
+          <text>"Reject"</text>
+        </outputEntry>
+        <outputEntry id="Output_98">
+          <text/>
+        </outputEntry>
+        <outputEntry id="Output_99">
+          <text/>
+        </outputEntry>
+        <outputEntry id="Output_100">
+          <text/>
+        </outputEntry>
+        <outputEntry id="Output_101">
+          <text>"Low Blood Pressure"</text>
+        </outputEntry>
+      </rule>
+      <rule id="Rule_102">
+        <inputEntry id="Input_103">
+          <text>"HBA1C"</text>
+        </inputEntry>
+        <inputEntry id="Input_104">
+          <text>"17855-8"</text>
+        </inputEntry>
+        <inputEntry id="Input_105">
+          <text>6</text>
+        </inputEntry>
+        <outputEntry id="AYYOO55CWodCRc5AgP8Uyibvm7mz6rBbY">
+          <text>"Accept"</text>
+        </outputEntry>
+        <outputEntry id="ANT9ppJxH6lbYn4CCa0wORPM3sgXpNHJu">
+          <text>"SYMUWDC01"</text>
+        </outputEntry>
+        <outputEntry id="A5jgH2rzUYSulavcqL570pFHLgyRHejMM">
+          <text>"Accept"</text>
+        </outputEntry>
+        <outputEntry id="AFSPViz9wWWY5NOOmYbpKwwCtvK4Of1Pq">
+          <text>"SYMUWDC0101000102"</text>
+        </outputEntry>
+        <outputEntry id="Output_106">
+          <text>"Accept "</text>
+        </outputEntry>
+        <outputEntry id="Output_107">
+          <text/>
+        </outputEntry>
+        <outputEntry id="Output_108">
+          <text/>
+        </outputEntry>
+        <outputEntry id="Output_109">
+          <text/>
+        </outputEntry>
+        <outputEntry id="Output_110">
+          <text/>
+        </outputEntry>
+      </rule>
+      <rule id="Rule_111">
+        <inputEntry id="Input_112">
+          <text>"HBA1C"</text>
+        </inputEntry>
+        <inputEntry id="Input_113">
+          <text>"17855-8"</text>
+        </inputEntry>
+        <inputEntry id="Input_114">
+          <text>7..8</text>
+        </inputEntry>
+        <outputEntry id="AWhMHZjiwfIERx4IR45Gk5PN88fNpDM8q">
+          <text>"Accept"</text>
+        </outputEntry>
+        <outputEntry id="A8mrjM9248YI19ItvQ4msKdrJZpZIW26a">
+          <text>"SYMUWDC01"</text>
+        </outputEntry>
+        <outputEntry id="AKQxDLUHA4AkGMhAnGQJJjucQLzG6NEOW">
+          <text>"Accept with loading"</text>
+        </outputEntry>
+        <outputEntry id="A5k4K2JhlB0gMXPbxxp340zM8CWYHFhQU">
+          <text>"SYMUWDC0102000302"</text>
+        </outputEntry>
+        <outputEntry id="Output_115">
+          <text>"Accept with loading"</text>
+        </outputEntry>
+        <outputEntry id="Output_116">
+          <text>10</text>
+        </outputEntry>
+        <outputEntry id="Output_117">
+          <text>"Diabetes Mellitus"</text>
+        </outputEntry>
+        <outputEntry id="Output_118">
+          <text>"E11"</text>
+        </outputEntry>
+        <outputEntry id="Output_119">
+          <text>"Raised Glycosulated Hemoglobin Level"</text>
+        </outputEntry>
+      </rule>
+      <rule id="Rule_120">
+        <inputEntry id="Input_121">
+          <text>"HBA1C"</text>
+        </inputEntry>
+        <inputEntry id="Input_122">
+          <text>"17855-8"</text>
+        </inputEntry>
+        <inputEntry id="Input_123">
+          <text>&gt;8</text>
+        </inputEntry>
+        <outputEntry id="AgB4VQvYT6f74vqka7bx7TSzujwnABR3V">
+          <text>"Reject"</text>
+        </outputEntry>
+        <outputEntry id="AJHiTzud4LZjomElQJOPdKUfRrmUGcWul">
+          <text>"SYMUWDC04"</text>
+        </outputEntry>
+        <outputEntry id="ASoAbQylPi24AbdtP4LFORfEJxyTTGe87">
+          <text>"Reject"</text>
+        </outputEntry>
+        <outputEntry id="AyicLumDauNGqhTKXQv5FDCYhRbo9aGBR">
+          <text>"SYMUWDC0402000102"</text>
+        </outputEntry>
+        <outputEntry id="Output_124">
+          <text>"Reject"</text>
+        </outputEntry>
+        <outputEntry id="Output_125">
+          <text/>
+        </outputEntry>
+        <outputEntry id="Output_126">
+          <text/>
+        </outputEntry>
+        <outputEntry id="Output_127">
+          <text/>
+        </outputEntry>
+        <outputEntry id="Output_128">
+          <text>"Poor Control of Blood Sugar level"</text>
+        </outputEntry>
+      </rule>
+      <rule id="Rule_129">
+        <inputEntry id="Input_130">
+          <text>"LDL"</text>
+        </inputEntry>
+        <inputEntry id="Input_131">
+          <text>"18262-6"</text>
+        </inputEntry>
+        <inputEntry id="Input_132">
+          <text>&lt;140</text>
+        </inputEntry>
+        <outputEntry id="AxrlaBi90VtNl4whUcAURq95kPoW2RqW0">
+          <text>"Accept"</text>
+        </outputEntry>
+        <outputEntry id="A4deEuKv6H753b5t8WsegWgQ1R6bFK1nx">
+          <text>"SYMUWDC01"</text>
+        </outputEntry>
+        <outputEntry id="A8zDkGBKW9qXQf8iA8S9U6fb9LoqBbuTu">
+          <text>"Accept"</text>
+        </outputEntry>
+        <outputEntry id="AHeAM5JYp4azzjlTi5aoS4nSSNolax8wL">
+          <text>"SYMUWDC0101000102"</text>
+        </outputEntry>
+        <outputEntry id="Output_133">
+          <text>"Accept "</text>
+        </outputEntry>
+        <outputEntry id="Output_134">
+          <text/>
+        </outputEntry>
+        <outputEntry id="Output_135">
+          <text/>
+        </outputEntry>
+        <outputEntry id="Output_136">
+          <text/>
+        </outputEntry>
+        <outputEntry id="Output_137">
+          <text/>
+        </outputEntry>
+      </rule>
+      <rule id="Rule_138">
+        <inputEntry id="Input_139">
+          <text>"LDL"</text>
+        </inputEntry>
+        <inputEntry id="Input_140">
+          <text>"18262-6"</text>
+        </inputEntry>
+        <inputEntry id="Input_141">
+          <text>141&lt;200</text>
+        </inputEntry>
+        <outputEntry id="Aqq5voHMSrd5cv7TJTq3mOeg1lYy6ElhQ">
+          <text>"Accept"</text>
+        </outputEntry>
+        <outputEntry id="AWcbGHDbG98CVf1rUSST6IeYfNZFXaNAh">
+          <text>"SYMUWDC01"</text>
+        </outputEntry>
+        <outputEntry id="AHXjGdtDbzrzSWFhF4gwwgnJwzBDpZ1WA">
+          <text>"Accept with loading"</text>
+        </outputEntry>
+        <outputEntry id="AqOyhfxFXkogPUWF2l0ijhyf5MrgODgJh">
+          <text>"SYMUWDC0102000302"</text>
+        </outputEntry>
+        <outputEntry id="Output_142">
+          <text>"Accept with loading"</text>
+        </outputEntry>
+        <outputEntry id="Output_143">
+          <text>10</text>
+        </outputEntry>
+        <outputEntry id="Output_144">
+          <text>"Dyslipidemia"</text>
+        </outputEntry>
+        <outputEntry id="Output_145">
+          <text>"E78"</text>
+        </outputEntry>
+        <outputEntry id="Output_146">
+          <text>"Raised Cholesterol Level"</text>
+        </outputEntry>
+      </rule>
+      <rule id="Rule_147">
+        <inputEntry id="Input_148">
+          <text>"LDL"</text>
+        </inputEntry>
+        <inputEntry id="Input_149">
+          <text>"18262-6"</text>
+        </inputEntry>
+        <inputEntry id="Input_150">
+          <text>&gt;200</text>
+        </inputEntry>
+        <outputEntry id="A5O7TKreCd4sMDTvhkbU2ke4Wbbqf4VuI">
+          <text>"Reject"</text>
+        </outputEntry>
+        <outputEntry id="ApIfTTzjKNgixAZRoaCTmkq0Dwoq7POan">
+          <text>"SYMUWDC04"</text>
+        </outputEntry>
+        <outputEntry id="ApCIXiapp4Jp8WiabVyRDJArhtudPZcEy">
+          <text>"Reject"</text>
+        </outputEntry>
+        <outputEntry id="A15gdoXszYTEbHHrg3EGtTCeRer37ybrX">
+          <text>"SYMUWDC0402000102"</text>
+        </outputEntry>
+        <outputEntry id="Output_151">
+          <text>"Reject"</text>
+        </outputEntry>
+        <outputEntry id="Output_152">
+          <text/>
+        </outputEntry>
+        <outputEntry id="Output_153">
+          <text/>
+        </outputEntry>
+        <outputEntry id="Output_154">
+          <text/>
+        </outputEntry>
+        <outputEntry id="Output_155">
+          <text>"Uncontrolled Cholesterol Levels"</text>
+        </outputEntry>
+      </rule>
+      <rule id="Rule_156">
+        <inputEntry id="Input_157">
+          <text>"RUA Glucose"</text>
+        </inputEntry>
+        <inputEntry id="Input_158">
+          <text>"2349-9"</text>
+        </inputEntry>
+        <inputEntry id="Input_159">
+          <text>0</text>
+        </inputEntry>
+        <outputEntry id="AoaCBokZZJs8uv98kS9dhyXitYY0CLJWs">
+          <text>"Accept"</text>
+        </outputEntry>
+        <outputEntry id="A38wutZ55sX7PVyVP5D1gefOiCt8gMoGf">
+          <text>"SYMUWDC01"</text>
+        </outputEntry>
+        <outputEntry id="AtJbcoGX7XLKkH5sI6nydrdTmPSuH25qG">
+          <text>"Accept"</text>
+        </outputEntry>
+        <outputEntry id="AUKzU1rtNiqjlzv3Fp7abMsXdh71U4Cep">
+          <text>"SYMUWDC0101000102"</text>
+        </outputEntry>
+        <outputEntry id="Output_160">
+          <text>"Accept "</text>
+        </outputEntry>
+        <outputEntry id="Output_161">
+          <text/>
+        </outputEntry>
+        <outputEntry id="Output_162">
+          <text/>
+        </outputEntry>
+        <outputEntry id="Output_163">
+          <text/>
+        </outputEntry>
+        <outputEntry id="Output_164">
+          <text/>
+        </outputEntry>
+      </rule>
+      <rule id="Rule_165">
+        <inputEntry id="Input_166">
+          <text>"RUA Glucose"</text>
+        </inputEntry>
+        <inputEntry id="Input_167">
+          <text>"2349-9"</text>
+        </inputEntry>
+        <inputEntry id="Input_168">
+          <text>1</text>
+        </inputEntry>
+        <outputEntry id="ANLwCol82FMSCv44O3DfbLF6Gfal8fNwY">
+          <text>"Reject"</text>
+        </outputEntry>
+        <outputEntry id="AywN8TzwbUBXDbv6TedImsU8PwnJ7uAih">
+          <text>"SYMUWDC04"</text>
+        </outputEntry>
+        <outputEntry id="AL2EtvXFkz6qU7DTIA2xYY4oX1Rc2ZpCD">
+          <text>"Reject"</text>
+        </outputEntry>
+        <outputEntry id="AoDTNt7p570uH2RAzecCV8FDxNI7tJX2A">
+          <text>"SYMUWDC0402000102"</text>
+        </outputEntry>
+        <outputEntry id="Output_169">
+          <text>"Reject"</text>
+        </outputEntry>
+        <outputEntry id="Output_170">
+          <text/>
+        </outputEntry>
+        <outputEntry id="Output_171">
+          <text/>
+        </outputEntry>
+        <outputEntry id="Output_172">
+          <text/>
+        </outputEntry>
+        <outputEntry id="Output_173">
+          <text>"Urine Glucose Present"</text>
+        </outputEntry>
+      </rule>
+      <rule id="Rule_174">
+        <inputEntry id="Input_175">
+          <text>"RUA Ketones"</text>
+        </inputEntry>
+        <inputEntry id="Input_176">
+          <text>"22702-5"</text>
+        </inputEntry>
+        <inputEntry id="Input_177">
+          <text>0</text>
+        </inputEntry>
+        <outputEntry id="AbS7Y1wIA5wQYMgrFmBvBGQQIPamQ4WdP">
+          <text>"Accept"</text>
+        </outputEntry>
+        <outputEntry id="AlYSFwcq6b8PY8yXtIcQnCIklxQLjfqxw">
+          <text>"SYMUWDC01"</text>
+        </outputEntry>
+        <outputEntry id="A9eBntJkhIGZ2V7TpFHp875SXg1ddLlH5">
+          <text>"Accept"</text>
+        </outputEntry>
+        <outputEntry id="AMpXrKZPpK0GhOPST3BlKwLUZ3vnq1xPy">
+          <text>"SYMUWDC0101000102"</text>
+        </outputEntry>
+        <outputEntry id="Output_178">
+          <text>"Accept "</text>
+        </outputEntry>
+        <outputEntry id="Output_179">
+          <text/>
+        </outputEntry>
+        <outputEntry id="Output_180">
+          <text/>
+        </outputEntry>
+        <outputEntry id="Output_181">
+          <text/>
+        </outputEntry>
+        <outputEntry id="Output_182">
+          <text/>
+        </outputEntry>
+      </rule>
+      <rule id="Rule_183">
+        <inputEntry id="Input_184">
+          <text>"RUA Ketones"</text>
+        </inputEntry>
+        <inputEntry id="Input_185">
+          <text>"22702-5"</text>
+        </inputEntry>
+        <inputEntry id="Input_186">
+          <text>1</text>
+        </inputEntry>
+        <outputEntry id="AG6z2wY0F4Hu4QfDMK8dy1OHOFmL6lAG4">
+          <text>"Reject"</text>
+        </outputEntry>
+        <outputEntry id="AayLnjRC3snm0C5SegNxbk5XvkSGND57N">
+          <text>"SYMUWDC04"</text>
+        </outputEntry>
+        <outputEntry id="A936twdlavsJPuc9DDhZQhfrV4yEWmKPB">
+          <text>"Reject"</text>
+        </outputEntry>
+        <outputEntry id="AK9k1NVjcHiumaPkisukOkGrO8g2Daivo">
+          <text>"SYMUWDC0402000102"</text>
+        </outputEntry>
+        <outputEntry id="Output_187">
+          <text>"Reject"</text>
+        </outputEntry>
+        <outputEntry id="Output_188">
+          <text/>
+        </outputEntry>
+        <outputEntry id="Output_189">
+          <text/>
+        </outputEntry>
+        <outputEntry id="Output_190">
+          <text/>
+        </outputEntry>
+        <outputEntry id="Output_191">
+          <text>"Urine Ketones Present"</text>
+        </outputEntry>
+      </rule>
+    </decisionTable>
+  </decision>
+</definitions>

@@ -1,0 +1,137 @@
+<definitions xmlns="https://www.omg.org/spec/DMN/20191111/MODEL/" xmlns:dmndi="https://www.omg.org/spec/DMN/20191111/DMNDI/" xmlns:dc="http://www.omg.org/spec/DMN/20180521/DC/" xmlns:biodi="http://bpmn.io/schema/dmn/biodi/2.0" xmlns:modeler="http://camunda.org/schema/modeler/1.0" id="ageValidationUnderwritingDmn" name="Age Validation Eligibility Criteria" namespace="http://camunda.org/schema/1.0/dmn" exporter="Camunda Modeler" exporterVersion="5.10.0" modeler:executionPlatform="Camunda Platform" modeler:executionPlatformVersion="7.17.0">
+  <decision id="ageValidationEligibilityCriteria" name="age validating">
+    <decisionTable id="DecisionTable_16k3zqg" hitPolicy="FIRST">
+      <input id="InputClause_05q8394">
+        <inputExpression id="LiteralExpression_1usnlsv" typeRef="integer">
+          <text>age</text>
+        </inputExpression>
+      </input>
+      <input id="InputClause_1wdfm20" biodi:width="391">
+        <inputExpression id="LiteralExpression_033cxvy" typeRef="string">
+          <text>insuredRisk.proposerRelationship</text>
+        </inputExpression>
+      </input>
+      <output id="AhlutOdzEgZNkxiM8YGOhPXvUnegmMrK2" name="uwDecision" typeRef="string"/>
+      <output id="A5Fe1Hh5bCORrAr0asE71xWki3E5bKdrc" name="uwDecisionCode" typeRef="string"/>
+      <output id="AiOO26dxc8zogAh6SXBEbxWOuV6w41iB1" name="uwDecisionStatus" typeRef="string"/>
+      <output id="AJ1OQy5p7HPJBHzOtCgOzV4U1QYN6GA85" name="uwDecisionAggregateCode" typeRef="string"/>
+      <output id="Output_1" name="underwritingDecision" typeRef="string">
+        <outputValues id="UnaryTests_1g9pvn5">
+          <text>"Reject","Accept","NSTP"</text>
+        </outputValues>
+      </output>
+      <output id="OutputClause_1kl61gy" name="uwComment" typeRef="string"/>
+      <rule id="DecisionRule_0vgp34s">
+        <inputEntry id="UnaryTests_1yfocia">
+          <text>&lt;18</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_09xktk3">
+          <text/>
+        </inputEntry>
+        <outputEntry id="A9zgXiACIkWtG5yGgJKRTQklq4A2d9or8">
+          <text>"Reject"</text>
+        </outputEntry>
+        <outputEntry id="ATVi1KPgdwrGCz4kIiwQZ4eO5Qg68570e">
+          <text>"SYMUWDC04"</text>
+        </outputEntry>
+        <outputEntry id="AzFqrlV8nNxH7MxhlqiAziXzfqrH5pVUP">
+          <text>"Reject"</text>
+        </outputEntry>
+        <outputEntry id="AIUPsbEBvvDfinSJQnbXNCuaqBQWkHNF6">
+          <text>"SYMUWDC0402000102"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_1twe3cj">
+          <text>"Reject"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_11ohr0k">
+          <text>"Insured member age is not permitted in this plan."</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_0bnwor9">
+        <inputEntry id="UnaryTests_1nahla5">
+          <text>[18..65]</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1hfk430">
+          <text>"Self"</text>
+        </inputEntry>
+        <outputEntry id="AUnu7my5ke3jR5VcTdfFGFhKblGafIAhj">
+          <text>"Accept"</text>
+        </outputEntry>
+        <outputEntry id="AK2woHf5Vm7H6Mbky4fp2tzGZ1SvAQdbg">
+          <text>"SYMUWDC01"</text>
+        </outputEntry>
+        <outputEntry id="AkoyUzBrMevoRxcO545Gxo11sqlBKrZTs">
+          <text>"Accept"</text>
+        </outputEntry>
+        <outputEntry id="AzD36kVIth4PcpURfivXXf4hxntjZTBcP">
+          <text>"SYMUWDC0101000102"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_0qsd5eg">
+          <text>"Accept"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_1agx3es">
+          <text>"Insured member age is permitted in this plan."</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_0peflmi">
+        <inputEntry id="UnaryTests_1qm6uia">
+          <text>&gt;65</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0epyh9x">
+          <text/>
+        </inputEntry>
+        <outputEntry id="AP1mFHiBis1tLfQefAcytfKNuai4b0wkm">
+          <text>"Reject"</text>
+        </outputEntry>
+        <outputEntry id="AHWWj3yaaf4Ug7dXDLS5x1DjV0hfnUaXt">
+          <text>"SYMUWDC04"</text>
+        </outputEntry>
+        <outputEntry id="Atv7dYUGEsp8YpfoON3n2mRFAYsanwFHN">
+          <text>"Reject"</text>
+        </outputEntry>
+        <outputEntry id="AXJcZRCUlyNYSMN6jMZOjza6v9F7KrSmN">
+          <text>"SYMUWDC0402000102"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_0em6eqw">
+          <text>"Reject"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_10m1esg">
+          <text>"Insured member age is not permitted in this plan."</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_0tk7kjz">
+        <inputEntry id="UnaryTests_1gml6ht">
+          <text/>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1174mkb">
+          <text/>
+        </inputEntry>
+        <outputEntry id="AO7eTBKkQOpL6Z43c5ZRloiqc1yDpWiMr">
+          <text>"Reject"</text>
+        </outputEntry>
+        <outputEntry id="Aj20yMcbEh1bAN08eGSDp7D4n1JeRQwfs">
+          <text>"SYMUWDC04"</text>
+        </outputEntry>
+        <outputEntry id="A7Wr5KGNMwrqP92kRtNMPQVicLWjBDixf">
+          <text>"Reject"</text>
+        </outputEntry>
+        <outputEntry id="AZSgZTkbkpvqnyLKHvgJNq1AqhDbrzl92">
+          <text>"SYMUWDC0402000102"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_1ux7mmi">
+          <text>"Reject"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_0ww3ovv">
+          <text>"Insured member age is not permitted in this plan."</text>
+        </outputEntry>
+      </rule>
+    </decisionTable>
+  </decision>
+  <dmndi:DMNDI>
+    <dmndi:DMNDiagram>
+      <dmndi:DMNShape dmnElementRef="ageValidationEligibilityCriteria">
+        <dc:Bounds height="80" width="180" x="160" y="100"/>
+      </dmndi:DMNShape>
+    </dmndi:DMNDiagram>
+  </dmndi:DMNDI>
+</definitions>

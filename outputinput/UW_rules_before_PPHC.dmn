@@ -1,0 +1,1031 @@
+<definitions xmlns="https://www.omg.org/spec/DMN/20191111/MODEL/" xmlns:dmndi="https://www.omg.org/spec/DMN/20191111/DMNDI/" xmlns:dc="http://www.omg.org/spec/DMN/20180521/DC/" xmlns:modeler="http://camunda.org/schema/modeler/1.0" id="Definitions_0vnnttv" name="DRD" namespace="http://camunda.org/schema/1.0/dmn" exporter="Camunda Modeler" exporterVersion="5.5.1" modeler:executionPlatform="Camunda Platform" modeler:executionPlatformVersion="7.18.0">
+  <decision id="UW_rules_before_PPHC" name="UW_rules_before_PPHC">
+    <decisionTable id="DecisionTable_1yyf9gx" hitPolicy="FIRST">
+      <input id="Input_1" label="Ailment">
+        <inputExpression id="InputExpression_1" typeRef="string">
+          <text>ailment</text>
+        </inputExpression>
+      </input>
+      <input id="InputClause_0xtvh57" label="Ailment Code  ">
+        <inputExpression id="LiteralExpression_0twrfv5" typeRef="string">
+          <text>ailmentCode</text>
+        </inputExpression>
+      </input>
+      <input id="InputClause_1wd6h8b" label="Current Status  ">
+        <inputExpression id="LiteralExpression_126k59c" typeRef="string">
+          <text>currentStatus</text>
+        </inputExpression>
+      </input>
+      <input id="InputClause_13b19nj" label="Duration">
+        <inputExpression id="LiteralExpression_1foq7xp" typeRef="integer">
+          <text>duration</text>
+        </inputExpression>
+      </input>
+      <input id="InputClause_1wzpc2m" label="Treatment Details  ">
+        <inputExpression id="LiteralExpression_00nbhgm" typeRef="string">
+          <text>treatmentDetails</text>
+        </inputExpression>
+      </input>
+      <output id="ABz5FNpU1kLrEkkr4BjWvRG6vBnkhvByJ" name="uwDecision" typeRef="string"/>
+      <output id="AQSCkPxLOJ4ecndT3p0PHpEKvKjvx3nLF" name="uwDecisionCode" typeRef="string"/>
+      <output id="ApfISOPmbDrLbdhZZoOK1yetxXCTuvLU3" name="uwDecisionStatus" typeRef="string"/>
+      <output id="AyG2Y7OBRC6gQiT5FZF3SpxvPbdim6SA4" name="uwDecisionAggregateCode" typeRef="string"/>
+      <output id="Output_1" label="Underwriting Decision  " name="underwritingDecision" typeRef="string"/>
+      <output id="OutputClause_1o7bc3l" label="PPMC Tests  " name="PPMC_tests" typeRef="string"/>
+      <output id="OutputClause_07rxab3" label="Add Info Text  " name="addInfoText" typeRef="string"/>
+      <output id="OutputClause_0ydqn5y" label="Communication_Text  " name="communication_Text" typeRef="string"/>
+      <rule id="DecisionRule_08d607y">
+        <inputEntry id="UnaryTests_0o3lpvu">
+          <text>"Hypertension"</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_04r38zx">
+          <text>"I10"</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_15ghb3y">
+          <text>"Cured"</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0fvenoq">
+          <text>0..4</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1005vy6">
+          <text>"Medical Treatment" </text>
+        </inputEntry>
+        <outputEntry id="AyP3lEUsjIyJZRzgjKgUSvQ2D4q1u1PUi">
+          <text>"WIP"</text>
+        </outputEntry>
+        <outputEntry id="AlXPoKIamUPM3G69MD6JAlmYSJgyfDuro">
+          <text>"SYMUWDC02"</text>
+        </outputEntry>
+        <outputEntry id="ArFAW2jSBZZ9KLcMND0gQTubr7UNSue7X">
+          <text>"PPHC"</text>
+        </outputEntry>
+        <outputEntry id="A9FxxNw4IuRSFffHtSnjbSAUpHv6Bv385">
+          <text>"SYMUWDC0202000102"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_1xu27o1">
+          <text>"PPHC"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_159vl9d">
+          <text>"Sys. BP, Dys. BP, HBA1C, LDL, RUA Glucose"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_0o82vkk">
+          <text/>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_178xae6">
+          <text/>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_1fx8rhr">
+        <inputEntry id="UnaryTests_08c87b8">
+          <text>"Hypertension"</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0qsbxpu">
+          <text>"I10"</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_162yq13">
+          <text>"Cured"</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1x1o3m6">
+          <text>5..10</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_04doqa2">
+          <text>"Medical Treatment" </text>
+        </inputEntry>
+        <outputEntry id="AuijVYhhDGmFyvB2mWDGqWdbO5AjHgdEf">
+          <text>"WIP"</text>
+        </outputEntry>
+        <outputEntry id="AbHT1gZGldgrZh3oTUv0U4dOawFlqOYn6">
+          <text>"SYMUWDC02"</text>
+        </outputEntry>
+        <outputEntry id="AlBO81BkrV5Eu5M1SE4LApHmR3a1qk2MB">
+          <text>"Refer to underwriter"</text>
+        </outputEntry>
+        <outputEntry id="AfQLX7tHKKsIoNSNifm6o0lEuvf8vHJKo">
+          <text>"SYMUWDC0202000702"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_1rnmvmh">
+          <text>"Refer to underwriter"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_0nohe7c">
+          <text>"Sys. BP, Dys. BP, HBA1C, LDL, RUA Glucose"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_1d4la8v">
+          <text/>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_1g5p630">
+          <text/>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_0piv0he">
+        <inputEntry id="UnaryTests_0q9mkzy">
+          <text>"Hypertension"</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1yz4ueb">
+          <text>"I10"</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0rn5ftl">
+          <text>"Cured"</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0ug07v9">
+          <text>&gt; 10</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0cpkyv4">
+          <text>"Medical Treatment" </text>
+        </inputEntry>
+        <outputEntry id="AsB8wAGQFpfn5NWO2eBsxuFSbj8f3jXOi">
+          <text>"WIP"</text>
+        </outputEntry>
+        <outputEntry id="AyTileOcBgiTFbfhrat1y609jgTzTltjG">
+          <text>"SYMUWDC02"</text>
+        </outputEntry>
+        <outputEntry id="A8Usj56KCkbC8SfqwGXdzTtgMNE7wGeaL">
+          <text>"Refer to underwriter"</text>
+        </outputEntry>
+        <outputEntry id="AAnjSq1D1Whu8DWtdXACjH6RMF6nfbgE6">
+          <text>"SYMUWDC0202000702"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_18momfb">
+          <text>"Refer to underwriter"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_0vuzfzb">
+          <text>"Sys. BP, Dys. BP, HBA1C, LDL, RUA Glucose"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_1doc79h">
+          <text/>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_1vk10rh">
+          <text/>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_1xab0nf">
+        <inputEntry id="UnaryTests_1c6eh8c">
+          <text>"Hypertension"</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0rv5jpx">
+          <text>"I10"</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_10siv0r">
+          <text>"Ongoing"</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1pe7ez1">
+          <text>0..4</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1uewy19">
+          <text>"Medical Treatment" </text>
+        </inputEntry>
+        <outputEntry id="AajteOrw3qDQ6i6bZk9xE7KXdZ5d0JGh7">
+          <text>"WIP"</text>
+        </outputEntry>
+        <outputEntry id="AxAB4wdJhnZFagy3Ry5BETvqIKTkVVTTJ">
+          <text>"SYMUWDC02"</text>
+        </outputEntry>
+        <outputEntry id="AyRxZiFDpGk3ABgzzNczvJrM94fsTsQgA">
+          <text>"PPHC"</text>
+        </outputEntry>
+        <outputEntry id="AZsQK7F1YF1rIXeqXaxXrP2byh7cJnHa1">
+          <text>"SYMUWDC0202000102"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_1ok5w2x">
+          <text>"PPHC"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_15m2dt7">
+          <text>"Sys. BP, Dys. BP, HBA1C, LDL, RUA Glucose"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_019kcty">
+          <text/>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_176nw33">
+          <text/>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_0y3f8t1">
+        <inputEntry id="UnaryTests_1nulolp">
+          <text>"Hypertension"</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0rqpg33">
+          <text>"I10"</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_06tynp0">
+          <text>"Ongoing"</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0igb50q">
+          <text>5..10</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1h8tsh9">
+          <text>"Medical Treatment" </text>
+        </inputEntry>
+        <outputEntry id="A7xhDmpUpU4N7VlO4bfQPj82IgDuc6uP0">
+          <text>"WIP"</text>
+        </outputEntry>
+        <outputEntry id="Ab1vWhTiEgxfv8FfRBVckgIAmMUTy7TnE">
+          <text>"SYMUWDC02"</text>
+        </outputEntry>
+        <outputEntry id="AJGrgRwTYIQk1jtcbYG1yxgbbDZZvVn3f">
+          <text>"PPHC"</text>
+        </outputEntry>
+        <outputEntry id="ADotojIDSqHCdwkuqKeEvslzdAm9WlvXf">
+          <text>"SYMUWDC0202000102"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_022qt0e">
+          <text>"PPHC"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_1gmjgq5">
+          <text>"Sys. BP, Dys. BP, HBA1C, LDL, RUA Glucose"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_1vmhg9m">
+          <text/>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_16uhh7y">
+          <text/>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_1ulxl9h">
+        <inputEntry id="UnaryTests_1ftjjy5">
+          <text>"Hypertension"</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_15buwv6">
+          <text>"I10"</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1x239tl">
+          <text>"Ongoing"</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0r70mwx">
+          <text>&gt; 10</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_14y01q7">
+          <text>"Medical Treatment" </text>
+        </inputEntry>
+        <outputEntry id="A1dKtfeBc1vtM3oAuqGidnLxrTZcIkXXD">
+          <text>"WIP"</text>
+        </outputEntry>
+        <outputEntry id="AVmHAndEesSnqdTWGk3O3J0Kt7NV0nvFf">
+          <text>"SYMUWDC02"</text>
+        </outputEntry>
+        <outputEntry id="AZhFISRdpYUiCQO7IBuGe6gUk15sZu8vO">
+          <text>"PPHC"</text>
+        </outputEntry>
+        <outputEntry id="ANrk4ChYl9TcYc7Ubz9EWSaetkJDpOSvL">
+          <text>"SYMUWDC0202000102"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_0iy77sq">
+          <text>"PPHC"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_1dpae97">
+          <text>"Sys. BP, Dys. BP, HBA1C, LDL, RUA Glucose"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_167aqgp">
+          <text/>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_0by5l1z">
+          <text/>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_0e124n4">
+        <inputEntry id="UnaryTests_1h92g15">
+          <text>"Type-2 Diabetes Mellitus"</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0ohb9j3">
+          <text>"E11"</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1hd9y2m">
+          <text>"Cured"</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1uv69xz">
+          <text>0..4</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1f172sl">
+          <text>"Medical Treatment" </text>
+        </inputEntry>
+        <outputEntry id="A2SSbCKukQwaxSKYQjWJCYjWMAwa7VIxM">
+          <text>"WIP"</text>
+        </outputEntry>
+        <outputEntry id="AQpkHPE1yPY7UcwMOT2rgv7Ez1SeSrC26">
+          <text>"SYMUWDC02"</text>
+        </outputEntry>
+        <outputEntry id="AvCntCNQZOgSjYvxUlmL3wrXaQdwE9EFI">
+          <text>"PPHC"</text>
+        </outputEntry>
+        <outputEntry id="AtK1sDXfrBaZKUXijhMeV8sdICTFg2VSI">
+          <text>"SYMUWDC0202000102"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_03ipzld">
+          <text>"PPHC"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_1mtulh8">
+          <text>"Sys. BP, Dys. BP, HBA1C, LDL, RUA Glucose"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_1t5ewxp">
+          <text/>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_0z1d9ix">
+          <text/>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_1gowfp8">
+        <inputEntry id="UnaryTests_0tshays">
+          <text>"Type-2 Diabetes Mellitus"</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1eytejx">
+          <text>"E11"</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0tz7gfi">
+          <text>"Cured"</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1woy3if">
+          <text>5..10</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0cuiv80">
+          <text>"Medical Treatment" </text>
+        </inputEntry>
+        <outputEntry id="A4dcOn8nBb9HEPxM6mc5ucDJjAt0kUtxW">
+          <text>"WIP"</text>
+        </outputEntry>
+        <outputEntry id="Alml1wUn0bNWWd82g0I25N2ZEaBlMiO2m">
+          <text>"SYMUWDC02"</text>
+        </outputEntry>
+        <outputEntry id="Auvtaj29nGqzqLJfR2KlOg0jDaefWDUuw">
+          <text>"Refer to underwriter"</text>
+        </outputEntry>
+        <outputEntry id="AYPOhqiImPKiDW2LLsKTWAL0qM2QGjTm8">
+          <text>"SYMUWDC0202000702"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_15ydntd">
+          <text>"Refer to underwriter"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_0xdcne6">
+          <text/>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_1fvb2ll">
+          <text/>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_1dc6vcn">
+          <text/>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_1bwj4sz">
+        <inputEntry id="UnaryTests_01rxq4m">
+          <text>"Type-2 Diabetes Mellitus"</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_04upl05">
+          <text>"E11"</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0udrh0e">
+          <text>"Cured"</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1ywoyk0">
+          <text>&gt; 10</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_05b12rn">
+          <text>"Medical Treatment" </text>
+        </inputEntry>
+        <outputEntry id="AnzybfqNTSAQggGQZmutFDYdFG1KGBRcn">
+          <text>"WIP"</text>
+        </outputEntry>
+        <outputEntry id="AK1SkZNs508Kr4tyf33bycV5zCiBZf3BO">
+          <text>"SYMUWDC02"</text>
+        </outputEntry>
+        <outputEntry id="AYVmXXcZntpxfuUXheBm9rG4MuOgKIa3W">
+          <text>"Refer to underwriter"</text>
+        </outputEntry>
+        <outputEntry id="AI3T9GSgFvKxfVQarFXNtjTcwf6qiKTpG">
+          <text>"SYMUWDC0202000702"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_0ijrgbt">
+          <text>"Refer to underwriter"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_1upgpnb">
+          <text/>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_1d444p0">
+          <text/>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_1lkz1e5">
+          <text/>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_0tw0vd1">
+        <inputEntry id="UnaryTests_10i0gv7">
+          <text>"Type-2 Diabetes Mellitus"</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_09g1czc">
+          <text>"E11"</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1m49q2o">
+          <text>"Ongoing"</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0b7cnk0">
+          <text>0..4</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_15kzcah">
+          <text>"Medical Treatment" </text>
+        </inputEntry>
+        <outputEntry id="ARelPkNqbT29NTLDaoKTWFq2onPnEQzP5">
+          <text>"WIP"</text>
+        </outputEntry>
+        <outputEntry id="Al4SmO9ByIvpOw0zBIJRsC8cBCgnEgbMc">
+          <text>"SYMUWDC02"</text>
+        </outputEntry>
+        <outputEntry id="ABhkpKLePZWQok4B3w7q8Eu2eO2wXwZfe">
+          <text>"PPHC"</text>
+        </outputEntry>
+        <outputEntry id="ArkVSiu9NzP1drUn9fIzBNSBbeaQveFuC">
+          <text>"SYMUWDC0202000102"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_1mm5qat">
+          <text>"PPHC"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_0ecixxt">
+          <text>"Sys. BP, Dys. BP, HBA1C, LDL, RUA Glucose"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_17ietgo">
+          <text/>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_0i0jok8">
+          <text/>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_07e7nby">
+        <inputEntry id="UnaryTests_0ndnkez">
+          <text>"Type-2 Diabetes Mellitus"</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0wksl9y">
+          <text>"E11"</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1tsbihu">
+          <text>"Ongoing"</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_10ma7e9">
+          <text>5..10</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0aeev79">
+          <text>"Medical Treatment" </text>
+        </inputEntry>
+        <outputEntry id="A0eQ4fmEG0jYj33AV5WH3YogOf29jXhkE">
+          <text>"WIP"</text>
+        </outputEntry>
+        <outputEntry id="AKTagsRSH99LADuql2NcxktH6w2RGcIRu">
+          <text>"SYMUWDC02"</text>
+        </outputEntry>
+        <outputEntry id="ANoChtfyQyGsqw6WEAryfLZ3fW8v1o2Fm">
+          <text>"PPHC"</text>
+        </outputEntry>
+        <outputEntry id="A507O1f4LbhDaTRRrcM9LeVNzqLT9yWa2">
+          <text>"SYMUWDC0202000102"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_1guxage">
+          <text>"PPHC"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_0wk7kka">
+          <text>"Sys. BP, Dys. BP, HBA1C, LDL, RUA Glucose"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_1nv9cp2">
+          <text/>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_1tbmgqy">
+          <text/>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_0i8zoab">
+        <inputEntry id="UnaryTests_04msifb">
+          <text>"Type-2 Diabetes Mellitus"</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0873hap">
+          <text>"E11"</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1jkjq66">
+          <text>"Ongoing"</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_12m84jf">
+          <text>&gt; 10</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0ipxybf">
+          <text>"Medical Treatment" </text>
+        </inputEntry>
+        <outputEntry id="Ab2GBUw0Utm8HVO5Dj4UVcOd9iuIrxz0H">
+          <text>"WIP"</text>
+        </outputEntry>
+        <outputEntry id="AyCdPlA4QqeVtP5ftlKqVCUzm4LRlfXZc">
+          <text>"SYMUWDC02"</text>
+        </outputEntry>
+        <outputEntry id="AAbaJbGF5iUHxvRaDfXaygvFZQdlbdOwH">
+          <text>"PPHC"</text>
+        </outputEntry>
+        <outputEntry id="AITpv9hOLPCOv6ZuQmhrTuJrM205HigcN">
+          <text>"SYMUWDC0202000102"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_1djqt73">
+          <text>"PPHC"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_1xw1fj6">
+          <text>"Sys. BP, Dys. BP, HBA1C, LDL, RUA Glucose"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_0eqk9dc">
+          <text/>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_0py0kd4">
+          <text/>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_1ol8y4p">
+        <inputEntry id="UnaryTests_0idq5je">
+          <text>"Hypertension"</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0wvp9c3">
+          <text>"I10"</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0wygmww">
+          <text>"Cured"</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1w1bxds">
+          <text>0..4</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0lux8dw">
+          <text>"Surgical Treatment"</text>
+        </inputEntry>
+        <outputEntry id="AbliiSV7naFj52ioWlknXVY2iYogXtN1m">
+          <text>"WIP"</text>
+        </outputEntry>
+        <outputEntry id="Agphs6J4b0SZorYFv3SONNMQmYnOBPYN6">
+          <text>"SYMUWDC02"</text>
+        </outputEntry>
+        <outputEntry id="AavAXUvcPOYGTqbGRz41Glb3ktzAa6yCV">
+          <text>"Add Info"</text>
+        </outputEntry>
+        <outputEntry id="AFf746Isng88ObP5MGQhQAe2bOTBkaxOU">
+          <text>"SYMUWDC0202000202"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_1d77jc5">
+          <text>"Add Info"
+</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_1dwkgnw">
+          <text/>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_0p1n3v1">
+          <text>"Kindly provide past medical records related to surgical treatment for Hypertension, please send us hospital discharge summery, all investigation reports, and follow up treatment details"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_14t9nxi">
+          <text/>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_0945lxm">
+        <inputEntry id="UnaryTests_10p339q">
+          <text>"Hypertension"</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0fcsfhu">
+          <text>"I10"</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0v2xvuf">
+          <text>"Cured"</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0ngnmkp">
+          <text>5..10</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0qg4zpo">
+          <text>"Surgical Treatment"</text>
+        </inputEntry>
+        <outputEntry id="AC30i7nn8yiuaE0fi9wvSG2BKSahySqxH">
+          <text>"WIP"</text>
+        </outputEntry>
+        <outputEntry id="A7i7eQDr3apuj730kqkRE5SpstD5aFQUl">
+          <text>"SYMUWDC02"</text>
+        </outputEntry>
+        <outputEntry id="ATLSnF6ILPKLVd3UGRAQrmAoqMEH2lTYu">
+          <text>"Add Info"</text>
+        </outputEntry>
+        <outputEntry id="A7WAbGYpKg6xZIBkiKy9YjeQ85Sxmpybl">
+          <text>"SYMUWDC0202000202"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_19g00cq">
+          <text>"Add Info"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_0jac7d9">
+          <text/>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_0xypvcx">
+          <text>"Kindly provide past medical records related to surgical treatment for Hypertension, please send us hospital discharge summery, all investigation reports, and follow up treatment details"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_0hcyz78">
+          <text/>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_0n2wl5n">
+        <inputEntry id="UnaryTests_1i2dalp">
+          <text>"Hypertension"</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0wuv3ua">
+          <text>"I10"</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0ocvcs5">
+          <text>"Cured"</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1jc2xhg">
+          <text>&gt; 10</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0davp4p">
+          <text>"Surgical Treatment"</text>
+        </inputEntry>
+        <outputEntry id="AkRbZ0lmZP5T77QVYJOhpjyk97Vzo3f6y">
+          <text>"WIP"</text>
+        </outputEntry>
+        <outputEntry id="AZt7qwFyfAJrGIh3YH7GkygqSHUI88vO4">
+          <text>"SYMUWDC02"</text>
+        </outputEntry>
+        <outputEntry id="AaplU1pkhJS2UHzHDVbYRgacMHUu7D7C8">
+          <text>"Add Info"</text>
+        </outputEntry>
+        <outputEntry id="ADLr127G86icVwb5VdlvZsRvSrTVHkHWv">
+          <text>"SYMUWDC0202000202"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_0q53txw">
+          <text>"Add Info"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_11qfrmu">
+          <text/>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_05miayq">
+          <text>"Kindly provide past medical records related to surgical treatment for Hypertension, please send us hospital discharge summery, all investigation reports, and follow up treatment details"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_0n4fdo2">
+          <text/>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_109wip9">
+        <inputEntry id="UnaryTests_18981wb">
+          <text>"Hypertension"</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1hp1p1j">
+          <text>"I10"</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_05daijc">
+          <text>"Ongoing"</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0aucac0">
+          <text>0..4</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0x28j0x">
+          <text>"Surgical Treatment"</text>
+        </inputEntry>
+        <outputEntry id="ADBDxGtBiAdudoQqakYm8H2CDI7ZoNujp">
+          <text>"Reject"</text>
+        </outputEntry>
+        <outputEntry id="AXwr8oJLbAO0rLcdEJbPIBuWZkjToqNg5">
+          <text>"SYMUWDC04"</text>
+        </outputEntry>
+        <outputEntry id="Am1OORmzKSCMOgccnPOCYh89TqZlNYJYP">
+          <text>"Reject"</text>
+        </outputEntry>
+        <outputEntry id="ABrlpbzDPeH97jXi7CmX5oof7G61ldzy8">
+          <text>"SYMUWDC0402000102"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_134twm6">
+          <text>"Reject"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_1l40q42">
+          <text/>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_07y2wg5">
+          <text/>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_15eut3e">
+          <text>"We couldnot extend the coverage due to ongoing surgical treatment for hypertension"</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_149w39o">
+        <inputEntry id="UnaryTests_19hmq1q">
+          <text>"Hypertension"</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1u83q90">
+          <text>"I10"</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1j5xphe">
+          <text>"Ongoing"</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_11knbhc">
+          <text>5..10</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0t3mqkq">
+          <text>"Surgical Treatment"</text>
+        </inputEntry>
+        <outputEntry id="AHznZoNFeOWrxqxiGqYSvENg2GsRfVAkz">
+          <text>"Reject"</text>
+        </outputEntry>
+        <outputEntry id="A2l6DGlC4RkIyJlqLmbz6ccS5gmM3YBR5">
+          <text>"SYMUWDC04"</text>
+        </outputEntry>
+        <outputEntry id="AgN6fslTOlTtFVAV6lxIiO3I8SQnQXYe9">
+          <text>"Reject"</text>
+        </outputEntry>
+        <outputEntry id="AijsIlg59p9x5gsboU5lIHJUEc5SBALoz">
+          <text>"SYMUWDC0402000102"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_0x42k4p">
+          <text>"Reject"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_1fvgl15">
+          <text/>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_0gmgs13">
+          <text/>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_1aww3zk">
+          <text>"We couldnot extend the coverage due to ongoing surgical treatment for hypertension"</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_0pxpoeo">
+        <inputEntry id="UnaryTests_1xoni8o">
+          <text>"Hypertension"</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1hf0tnp">
+          <text>"I10"</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1gy9fkf">
+          <text>"Ongoing"</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_17ayji8">
+          <text>&gt; 10</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0stw574">
+          <text>"Surgical Treatment"</text>
+        </inputEntry>
+        <outputEntry id="AVSofjM4BoLQBfqoXl8PJmDk2u7EegQJH">
+          <text>"Reject"</text>
+        </outputEntry>
+        <outputEntry id="A9kogpJjHnVUn8zYI5HWos6nYwutBiGTw">
+          <text>"SYMUWDC04"</text>
+        </outputEntry>
+        <outputEntry id="AYriXX15TupuIgyWH0RTrvwIyWwgzBkOn">
+          <text>"Reject"</text>
+        </outputEntry>
+        <outputEntry id="A9B5dVQjF9gvVbuUhiG8KUDWMCuIbf3Q4">
+          <text>"SYMUWDC0402000102"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_01cq2cm">
+          <text>"Reject"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_1obcyjw">
+          <text/>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_10mj0li">
+          <text/>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_19kf4as">
+          <text>"We couldnot extend the coverage due to ongoing surgical treatment for hypertension"</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_03ohdye">
+        <inputEntry id="UnaryTests_11o6rkj">
+          <text>"Type-2 Diabetes Mellitus"</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1pt7swd">
+          <text>"E11"</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_125tz2y">
+          <text>"Cured"</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1vixml8">
+          <text>0..4</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0mm82q1">
+          <text>"Surgical Treatment"</text>
+        </inputEntry>
+        <outputEntry id="AZOJw0SoRGzQ265XSpWJ3b8rgx8RoB6AW">
+          <text>"WIP"</text>
+        </outputEntry>
+        <outputEntry id="AO571Fhd7h2FOOPMTCfu44GxGQv2HJEeS">
+          <text>"SYMUWDC02"</text>
+        </outputEntry>
+        <outputEntry id="AmftcaLhSiBuWmDeEzygMZi3x5nPPq4ZV">
+          <text>"Add Info"</text>
+        </outputEntry>
+        <outputEntry id="AsY82dSxtLjF08xp519ao1ZJYenIbYLd7">
+          <text>"SYMUWDC0202000202"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_1krn53l">
+          <text>"Add Info"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_15alz4h">
+          <text/>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_0wwjzxq">
+          <text>"Kindly provide past medical records related to surgical treatment for Hypertension, please send us hospital discharge summery, all investigation reports, and follow up treatment details"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_1r5l91d">
+          <text/>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_1fe6s5w">
+        <inputEntry id="UnaryTests_1psds2g">
+          <text>"Type-2 Diabetes Mellitus"</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1bu3a5k">
+          <text>"E11"</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1hiu0i3">
+          <text>"Cured"</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_10bll6v">
+          <text>5..10</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_17sz8dg">
+          <text>"Surgical Treatment"</text>
+        </inputEntry>
+        <outputEntry id="ApXd8S95a9VJCb9t3dBhYRYbYuGhiFScY">
+          <text>"WIP"</text>
+        </outputEntry>
+        <outputEntry id="Aq98Br17yv1xSsG92zwFtJ9JovKz4OEF3">
+          <text>"SYMUWDC02"</text>
+        </outputEntry>
+        <outputEntry id="AQeegkmufAdlpOf5nlySVIUwx6eKXcT0a">
+          <text>"Add Info"</text>
+        </outputEntry>
+        <outputEntry id="AXa6PQn3GXDlB1SXM88SYVWdW24Y3OOi0">
+          <text>"SYMUWDC0202000202"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_16uu9oc">
+          <text>"Add Info"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_09ifg06">
+          <text/>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_1w6a3rj">
+          <text>"Kindly provide past medical records related to surgical treatment for Hypertension, please send us hospital discharge summery, all investigation reports, and follow up treatment details"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_0vd1b1u">
+          <text/>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_1eq7si8">
+        <inputEntry id="UnaryTests_1bpzptg">
+          <text>"Type-2 Diabetes Mellitus"</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1l3bux0">
+          <text>"E11"</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0514zek">
+          <text>"Cured"</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1pzjw8c">
+          <text>&gt; 10</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0myzlq5">
+          <text>"Surgical Treatment"</text>
+        </inputEntry>
+        <outputEntry id="Ar1bebvWrWlSeZ7k68IEbNxYAeMFkx3vU">
+          <text>"WIP"</text>
+        </outputEntry>
+        <outputEntry id="AbRl1JU3UiddPRMGmQYwi4MSh2FQP4K8Q">
+          <text>"SYMUWDC02"</text>
+        </outputEntry>
+        <outputEntry id="AOxC9ijHZNmCiirPq6AI1dSDaQFuhiuR6">
+          <text>"Add Info"</text>
+        </outputEntry>
+        <outputEntry id="A7jwlT27rT0sRt7X4ZgyqzkY8LcBAkk9r">
+          <text>"SYMUWDC0202000202"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_023kzxc">
+          <text>"Add Info"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_0x6ydy1">
+          <text/>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_1434axo">
+          <text>"Kindly provide past medical records related to surgical treatment for Hypertension, please send us hospital discharge summery, all investigation reports, and follow up treatment details"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_1i7a4gy">
+          <text/>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_0nmr9k4">
+        <inputEntry id="UnaryTests_1wxiyjl">
+          <text>"Type-2 Diabetes Mellitus"</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1fhkijk">
+          <text>"E11"</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_181080v">
+          <text>"Ongoing"</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1w58wo6">
+          <text>0..4</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_19jw6uw">
+          <text>"Surgical Treatment"</text>
+        </inputEntry>
+        <outputEntry id="Ajd7HVFHOqpyU6xN28xnhLdzfRzxhcsko">
+          <text>"Reject"</text>
+        </outputEntry>
+        <outputEntry id="AORVAtt0h1ZBJRffHdmVXUZBFuRw55dSP">
+          <text>"SYMUWDC04"</text>
+        </outputEntry>
+        <outputEntry id="Atk07GRV5EtY0nJlb1RmOmmPN5Pa68pCz">
+          <text>"Reject"</text>
+        </outputEntry>
+        <outputEntry id="ANtAszqMmv1mI0Y2z9QlrO0uAu4zCx1Bt">
+          <text>"SYMUWDC0402000102"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_0w56lwc">
+          <text>"Reject"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_13ou5g1">
+          <text/>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_04aqtrz">
+          <text/>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_0jic7fj">
+          <text>"We couldnot extend the coverage due to ongoing surgical treatment for hypertension"</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_1itmcse">
+        <inputEntry id="UnaryTests_0lmjsrd">
+          <text>"Type-2 Diabetes Mellitus"</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_189lhtl">
+          <text>"E11"</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1f6f1hw">
+          <text>"Ongoing"</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1mtdr40">
+          <text>5..10</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0c0ecxs">
+          <text>"Surgical Treatment"</text>
+        </inputEntry>
+        <outputEntry id="ALv43fCXWe8sk7A7vhhy0xvcCWlVkRq5q">
+          <text>"Reject"</text>
+        </outputEntry>
+        <outputEntry id="AqRWLhsjXgPzfx21Yi6DjIhve9dKY2Lx9">
+          <text>"SYMUWDC04"</text>
+        </outputEntry>
+        <outputEntry id="A61M84p3T8iUneCU0oNnV47j1JftxFDfP">
+          <text>"Reject"</text>
+        </outputEntry>
+        <outputEntry id="AnR8Auo7yEH1L6aABBSpKfYczEEmCniDd">
+          <text>"SYMUWDC0402000102"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_1uneenu">
+          <text>"Reject"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_1dyeukm">
+          <text/>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_0x80leg">
+          <text/>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_05p2l02">
+          <text>"We couldnot extend the coverage due to ongoing surgical treatment for hypertension"</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_0s3xs3g">
+        <inputEntry id="UnaryTests_15h7d05">
+          <text>"Type-2 Diabetes Mellitus"</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_00t4ndj">
+          <text>"E11"</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0x69scz">
+          <text>"Ongoing"</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0hpzuze">
+          <text>&gt; 10</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0q3p3e1">
+          <text>"Surgical Treatment"</text>
+        </inputEntry>
+        <outputEntry id="Ao0k6U0QV7OOlWnnFxNVgNq3xxc9p3VWZ">
+          <text>"Reject"</text>
+        </outputEntry>
+        <outputEntry id="AvzEPWCwMdqNTxVi9Ovaxger2ffIjAW4V">
+          <text>"SYMUWDC04"</text>
+        </outputEntry>
+        <outputEntry id="Awaug0a32utUAb3vZDEGKzqZb2I44xekf">
+          <text>"Reject"</text>
+        </outputEntry>
+        <outputEntry id="Ao37dQrRvwciblta1GjMqbKj5fjbamoJK">
+          <text>"SYMUWDC0402000102"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_10bcj40">
+          <text>"Reject"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_0o945pc">
+          <text/>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_0kr556p">
+          <text/>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_1g7t7c8">
+          <text>"We couldnot extend the coverage due to ongoing surgical treatment for hypertension"</text>
+        </outputEntry>
+      </rule>
+    </decisionTable>
+  </decision>
+  <dmndi:DMNDI>
+    <dmndi:DMNDiagram>
+      <dmndi:DMNShape dmnElementRef="UW_rules_before_PPHC">
+        <dc:Bounds height="80" width="180" x="160" y="100"/>
+      </dmndi:DMNShape>
+    </dmndi:DMNDiagram>
+  </dmndi:DMNDI>
+</definitions>

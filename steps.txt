@@ -1,0 +1,7 @@
+1. remove encoding from dmn file
+
+
+
+
+// Developer
+1. find column number of given column Name
